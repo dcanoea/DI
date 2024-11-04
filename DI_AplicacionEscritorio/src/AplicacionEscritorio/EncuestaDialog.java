@@ -27,6 +27,7 @@ public class EncuestaDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroupSexo = new javax.swing.ButtonGroup();
         jLabelProfesion = new javax.swing.JLabel();
         jTextFieldProfesion = new javax.swing.JTextField();
         jLabelHermanos = new javax.swing.JLabel();
@@ -54,6 +55,7 @@ public class EncuestaDialog extends javax.swing.JDialog {
         jLabelCine = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setLocation(new java.awt.Point(600, 250));
         setResizable(false);
 
         jLabelProfesion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -62,18 +64,30 @@ public class EncuestaDialog extends javax.swing.JDialog {
         jTextFieldProfesion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextFieldProfesion.setToolTipText("Profesión");
 
+        jLabelHermanos.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelHermanos.setText("Nº Hermanos");
 
+        jSpinnerHermanos.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jSpinnerHermanos.setToolTipText("Nº Hermanos");
+
+        jLabelEdad.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelEdad.setText("Edad: ");
 
-        jComboBoxEdad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxEdad.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jComboBoxEdad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "< 18 años", "18 - 30 años", "31 - 40 años", "41 - 50 años", "> 50 años" }));
+        jComboBoxEdad.setToolTipText("Edad");
 
         jPanelSexo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        buttonGroupSexo.add(jRadioButtonHombre);
+        jRadioButtonHombre.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jRadioButtonHombre.setText("HOMBRE");
 
+        buttonGroupSexo.add(jRadioButtonMujer);
+        jRadioButtonMujer.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jRadioButtonMujer.setText("MUJER");
 
+        jLabelSexo.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelSexo.setText("Sexo");
 
         javax.swing.GroupLayout jPanelSexoLayout = new javax.swing.GroupLayout(jPanelSexo);
@@ -100,15 +114,18 @@ public class EncuestaDialog extends javax.swing.JDialog {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        jCheckBoxDeporte.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBoxDeporte.setText("¿Practica algún deporte?");
 
         jScrollPaneDeportes.setToolTipText("");
 
+        jListDeportes.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jListDeportes.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "Fútbol", "Baloncesto", "Tenis", "Balonmano", "Atletismo" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jListDeportes.setToolTipText("¿Cuál?");
         jScrollPaneDeportes.setViewportView(jListDeportes);
 
         javax.swing.GroupLayout jPanelDeportesLayout = new javax.swing.GroupLayout(jPanelDeportes);
@@ -124,39 +141,49 @@ public class EncuestaDialog extends javax.swing.JDialog {
             .addComponent(jScrollPaneDeportes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
         );
 
+        jLabelCual.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelCual.setText("¿Cuál?");
 
+        jButtonAceptar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonAceptar.setText("ACEPTAR");
 
+        jButtonCancelar.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jButtonCancelar.setText("CANCELAR");
 
+        jSliderCompras.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jSliderCompras.setMajorTickSpacing(1);
         jSliderCompras.setMaximum(10);
         jSliderCompras.setMinimum(1);
         jSliderCompras.setMinorTickSpacing(1);
         jSliderCompras.setPaintLabels(true);
-        jSliderCompras.setValue(0);
+        jSliderCompras.setValue(5);
 
+        jLabelTexto.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelTexto.setText("Marque de 1 a 10 su grado de afición a:");
 
+        jSliderTelevision.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jSliderTelevision.setMajorTickSpacing(1);
         jSliderTelevision.setMaximum(10);
         jSliderTelevision.setMinimum(1);
         jSliderTelevision.setMinorTickSpacing(1);
         jSliderTelevision.setPaintLabels(true);
-        jSliderTelevision.setValue(0);
+        jSliderTelevision.setValue(5);
 
+        jSliderCine.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jSliderCine.setMajorTickSpacing(1);
         jSliderCine.setMaximum(10);
         jSliderCine.setMinimum(1);
         jSliderCine.setMinorTickSpacing(1);
         jSliderCine.setPaintLabels(true);
-        jSliderCine.setValue(0);
+        jSliderCine.setValue(5);
 
+        jLabelCompras.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelCompras.setText("Compras");
 
+        jLabelTelevision.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelTelevision.setText("Ver la televisión");
 
+        jLabelCine.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelCine.setText("Ir al cine");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -199,7 +226,7 @@ public class EncuestaDialog extends javax.swing.JDialog {
                     .addComponent(jLabelCompras)
                     .addComponent(jLabelTelevision)
                     .addComponent(jLabelCine))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSliderTelevision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSliderCine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -311,6 +338,7 @@ public class EncuestaDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroupSexo;
     private javax.swing.JButton jButtonAceptar;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JCheckBox jCheckBoxDeporte;

@@ -56,6 +56,7 @@ public class encuesta extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
+        jLabelProfesion.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabelProfesion.setText("Profesión");
 
         jLabelHermanos.setText("Nº Hermanos");

@@ -6,8 +6,13 @@ package aplicacion;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.Calendar;
+import java.util.Date;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JSpinner;
+import javax.swing.SpinnerDateModel;
+import javax.swing.SpinnerModel;
 
 /**
  *
@@ -21,6 +26,7 @@ public class SalonHabana extends javax.swing.JDialog {
     public SalonHabana(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        spinnerFecha();
     }
 
     /**
@@ -32,7 +38,13 @@ public class SalonHabana extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroupCocina = new javax.swing.ButtonGroup();
         jPanelPrincipal = new javax.swing.JPanel();
+        jPanelTipoCocina = new javax.swing.JPanel();
+        jRadioBufe = new javax.swing.JRadioButton();
+        jRadioCarta = new javax.swing.JRadioButton();
+        jRadioCitaChef = new javax.swing.JRadioButton();
+        jRadioNoPrecisa = new javax.swing.JRadioButton();
         jLabelNombre = new javax.swing.JLabel();
         jLabelImagen = new javax.swing.JLabel();
         jLabelPresentacion = new javax.swing.JLabel();
@@ -42,85 +54,176 @@ public class SalonHabana extends javax.swing.JDialog {
         jSeparator1 = new javax.swing.JSeparator();
         jLabelFecha = new javax.swing.JLabel();
         jSpinnerFecha = new javax.swing.JSpinner();
+        jLabelPersonas = new javax.swing.JLabel();
+        jSpinnerPersonas = new javax.swing.JSpinner();
+        jComboBoxTipoBanquete = new javax.swing.JComboBox<>();
+        jLabelTipoReserva = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Reserva Salón Habana");
         setIconImage(getIconImage());
-        setLocation(new java.awt.Point(500, 250));
+        setLocation(new java.awt.Point(400, 150));
+        setResizable(false);
 
         jPanelPrincipal.setBackground(new java.awt.Color(248, 228, 191));
+        jPanelPrincipal.setPreferredSize(new java.awt.Dimension(1000, 734));
 
+        jPanelTipoCocina.setBackground(new java.awt.Color(248, 228, 191));
+        jPanelTipoCocina.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tipo cocina", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Century Gothic", 0, 18))); // NOI18N
+        jPanelTipoCocina.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jPanelTipoCocina.setLayout(new java.awt.GridLayout());
+
+        buttonGroupCocina.add(jRadioBufe);
+        jRadioBufe.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jRadioBufe.setText("Bufé");
+        jRadioBufe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jRadioBufe.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jRadioBufe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioBufeActionPerformed(evt);
+            }
+        });
+        jPanelTipoCocina.add(jRadioBufe);
+
+        buttonGroupCocina.add(jRadioCarta);
+        jRadioCarta.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jRadioCarta.setText("Carta");
+        jRadioCarta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jRadioCarta.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jPanelTipoCocina.add(jRadioCarta);
+
+        buttonGroupCocina.add(jRadioCitaChef);
+        jRadioCitaChef.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jRadioCitaChef.setText("Cita Chef");
+        jRadioCitaChef.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jRadioCitaChef.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jPanelTipoCocina.add(jRadioCitaChef);
+
+        buttonGroupCocina.add(jRadioNoPrecisa);
+        jRadioNoPrecisa.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jRadioNoPrecisa.setText("No precisa");
+        jRadioNoPrecisa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jRadioNoPrecisa.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jPanelTipoCocina.add(jRadioNoPrecisa);
+
+        jLabelNombre.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabelNombre.setText("Nombre");
 
         jLabelImagen.setBackground(new java.awt.Color(248, 228, 191));
         jLabelImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/habana.jpg"))); // NOI18N
+        jLabelImagen.setPreferredSize(new java.awt.Dimension(1080, 762));
 
         jLabelPresentacion.setBackground(new java.awt.Color(248, 228, 191));
-        jLabelPresentacion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabelPresentacion.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jLabelPresentacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelPresentacion.setText("Bienvenido/a a la central de reservas de Salón Habana");
+        jLabelPresentacion.setText("Bienvenido a la central de reservas de Salón Habana");
         jLabelPresentacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        jTextFieldNombre.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jTextFieldNombre.setToolTipText("Nombre");
+
+        jLabelTelefono.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabelTelefono.setText("Teléfono");
+
+        jTextFieldTelefono.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jTextFieldTelefono.setToolTipText("Teléfono");
 
         jLabelFecha.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabelFecha.setText("Fecha reserva");
 
         jSpinnerFecha.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jSpinnerFecha.setModel(new javax.swing.SpinnerDateModel());
+        jSpinnerFecha.setToolTipText("Fecha reserva");
+
+        jLabelPersonas.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabelPersonas.setText("Nº Personas");
+
+        jSpinnerPersonas.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jSpinnerPersonas.setModel(new javax.swing.SpinnerNumberModel());
+        jSpinnerPersonas.setToolTipText("Nº Personas");
+
+        jComboBoxTipoBanquete.setBackground(new java.awt.Color(204, 204, 204));
+        jComboBoxTipoBanquete.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jComboBoxTipoBanquete.setForeground(new java.awt.Color(204, 204, 204));
+        jComboBoxTipoBanquete.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banquete", "Jornada", "Congreso" }));
+        jComboBoxTipoBanquete.setToolTipText("Tipo reserva");
+
+        jLabelTipoReserva.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabelTipoReserva.setText("Tipo reserva");
 
         javax.swing.GroupLayout jPanelPrincipalLayout = new javax.swing.GroupLayout(jPanelPrincipal);
         jPanelPrincipal.setLayout(jPanelPrincipalLayout);
         jPanelPrincipalLayout.setHorizontalGroup(
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabelPresentacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 978, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelPrincipalLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jLabelPresentacion, javax.swing.GroupLayout.PREFERRED_SIZE, 978, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(49, 49, 49)
+                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanelTipoCocina, javax.swing.GroupLayout.PREFERRED_SIZE, 884, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                        .addComponent(jLabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabelNombre)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                                 .addComponent(jLabelFecha)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jSpinnerFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                                .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelTelefono)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(76, 76, 76))))))
-            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1019, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jSpinnerFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(70, 70, 70)
+                                .addComponent(jLabelTipoReserva)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBoxTipoBanquete, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                                .addComponent(jLabelNombre)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(48, 48, 48)
+                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                                .addComponent(jLabelPersonas)
+                                .addGap(18, 18, 18)
+                                .addComponent(jSpinnerPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                                .addComponent(jLabelTelefono)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))))))
         );
         jPanelPrincipalLayout.setVerticalGroup(
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelPresentacion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
+                .addComponent(jLabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelNombre)
-                    .addComponent(jLabelTelefono)
-                    .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelFecha)
-                    .addComponent(jSpinnerFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 266, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelTelefono))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jSpinnerPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelPersonas)))
+                    .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelNombre))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelFecha)
+                            .addComponent(jSpinnerFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxTipoBanquete)
+                            .addComponent(jLabelTipoReserva))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelTipoCocina, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(537, 537, 537))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -134,9 +237,9 @@ public class SalonHabana extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleDescription("");
@@ -144,6 +247,10 @@ public class SalonHabana extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jRadioBufeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioBufeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioBufeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,20 +294,59 @@ public class SalonHabana extends javax.swing.JDialog {
         });
     }
 
+    //Método que crea la imagen para el icono de ventana
     public Image getIconImage() {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("resources/img.png"));
 
         return retValue;
     }
+
+    Calendar calendar = Calendar.getInstance();//Instancia Calendar para el método del spinner
+
+    //Método para que el spinner de la fecha sea en formato DD/MM/AAAA
+    private void spinnerFecha() {
+        //Obtenemos una fecha de inicio, será la fecha actual del sistema
+        Date inicio = calendar.getTime();
+        //Indicamos año hasta -100 del actual
+        calendar.add(Calendar.YEAR, -100);
+        //Guardamos la configuración en un DATE
+        Date fechaAnterior = calendar.getTime();
+        //Indicamos año hasta +200 del actual
+        calendar.add(Calendar.YEAR, 200);
+        //Guardamos la configuración en un DATE
+        Date fechaPosterior = calendar.getTime();
+        //Usamos el contructor de abajo para crear un modelo para el Spinner
+        //SpinnerDateModel(Date value, Comparable start, Comparable end, int calendarField)
+        //Utilizamos los datos que creamos más arriba
+        //Para fecha utilizamos Calendar.YEAR y para hora Calendar.HOUR, el resto puede ser igual
+        SpinnerModel fechaModel = new SpinnerDateModel(inicio, fechaAnterior, fechaPosterior, Calendar.YEAR);
+        //Indicamos el model para cada Spinner además del formato de fecha y hora según corresponda.
+        jSpinnerFecha.setModel(fechaModel);
+        jSpinnerFecha.setEditor(new JSpinner.DateEditor(jSpinnerFecha, "dd/MM/yyyy"));
+        
+
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroupCocina;
+    private javax.swing.JComboBox<String> jComboBoxTipoBanquete;
     private javax.swing.JLabel jLabelFecha;
     private javax.swing.JLabel jLabelImagen;
     private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelPersonas;
     private javax.swing.JLabel jLabelPresentacion;
     private javax.swing.JLabel jLabelTelefono;
+    private javax.swing.JLabel jLabelTipoReserva;
     private javax.swing.JPanel jPanelPrincipal;
+    private javax.swing.JPanel jPanelTipoCocina;
+    private javax.swing.JRadioButton jRadioBufe;
+    private javax.swing.JRadioButton jRadioCarta;
+    private javax.swing.JRadioButton jRadioCitaChef;
+    private javax.swing.JRadioButton jRadioNoPrecisa;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSpinner jSpinnerFecha;
+    private javax.swing.JSpinner jSpinnerPersonas;
     private javax.swing.JTextField jTextFieldNombre;
     private javax.swing.JTextField jTextFieldTelefono;
     // End of variables declaration//GEN-END:variables

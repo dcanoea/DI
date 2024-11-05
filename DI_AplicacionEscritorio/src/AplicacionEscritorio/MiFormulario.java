@@ -4,6 +4,7 @@ package AplicacionEscritorio;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+
 /**
  *
  * @author David Cano Escario
@@ -28,11 +29,6 @@ public class MiFormulario extends javax.swing.JFrame {
 
         jDialog1 = new javax.swing.JDialog();
         jButtonAbrirEncuesta = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenuArchivo = new javax.swing.JMenu();
-        jMenuEncuesta = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuAyuda = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
         jDialog1.getContentPane().setLayout(jDialog1Layout);
@@ -55,41 +51,21 @@ public class MiFormulario extends javax.swing.JFrame {
             }
         });
 
-        jMenuArchivo.setText("Archivo");
-        jMenuBar1.add(jMenuArchivo);
-
-        jMenuEncuesta.setText("Encuesta");
-
-        jMenuItem1.setText("Hacer encuesta");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenuEncuesta.add(jMenuItem1);
-
-        jMenuBar1.add(jMenuEncuesta);
-
-        jMenuAyuda.setText("Ayuda");
-        jMenuBar1.add(jMenuAyuda);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(177, 177, 177)
+                .addGap(196, 196, 196)
                 .addComponent(jButtonAbrirEncuesta)
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addContainerGap(182, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(131, 131, 131)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(147, Short.MAX_VALUE)
                 .addComponent(jButtonAbrirEncuesta)
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addGap(130, 130, 130))
         );
 
         pack();
@@ -99,10 +75,6 @@ public class MiFormulario extends javax.swing.JFrame {
         EncuestaDialog encuesta = new EncuestaDialog(this, rootPaneCheckingEnabled);
         encuesta.setVisible(true);
     }//GEN-LAST:event_jButtonAbrirEncuestaActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        new EncuestaDialog(this, rootPaneCheckingEnabled).setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,10 +115,5 @@ public class MiFormulario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAbrirEncuesta;
     private javax.swing.JDialog jDialog1;
-    private javax.swing.JMenu jMenuArchivo;
-    private javax.swing.JMenu jMenuAyuda;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu jMenuEncuesta;
-    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

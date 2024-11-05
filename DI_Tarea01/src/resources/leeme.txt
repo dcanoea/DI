@@ -1,0 +1,4 @@
+- Cambiar Icono Ventana
+    Hay que sobreescribir el método getIconImage.
+    Una vez hecho el método, desde las propiedades del Frame o Dialog, seleccionamos IconImage > ... > Value from existing component > Property > IconImage
+    

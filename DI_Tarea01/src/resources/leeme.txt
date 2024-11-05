@@ -1,4 +1,11 @@
+- He añadido un jPanel como contenedor principal, con orden libre y fondo de color
+
 - Cambiar Icono Ventana
+    La imagen debe estar en un paquete del proyecto (resources)
     Hay que sobreescribir el método getIconImage.
-    Una vez hecho el método, desde las propiedades del Frame o Dialog, seleccionamos IconImage > ... > Value from existing component > Property > IconImage
+    Una vez hecho el método, desde las propiedades del Frame o Dialog, seleccionamos: 
+            IconImage > ... > Value from existing component > Property > IconImage
+
+- Imagen de presentación
+    Se trata de una etiqueta sin texto, en la que la imagen es su icono
     

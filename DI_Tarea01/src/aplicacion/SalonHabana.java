@@ -58,6 +58,11 @@ public class SalonHabana extends javax.swing.JDialog {
         jSpinnerPersonas = new javax.swing.JSpinner();
         jComboBoxTipoBanquete = new javax.swing.JComboBox<>();
         jLabelTipoReserva = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jTextFieldCongreso = new javax.swing.JTextField();
+        jLabelDiasCongreso = new javax.swing.JLabel();
+        jCheckBoxAlojamiento = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Reserva Salón Habana");
@@ -66,7 +71,7 @@ public class SalonHabana extends javax.swing.JDialog {
         setResizable(false);
 
         jPanelPrincipal.setBackground(new java.awt.Color(248, 228, 191));
-        jPanelPrincipal.setPreferredSize(new java.awt.Dimension(1000, 734));
+        jPanelPrincipal.setPreferredSize(new java.awt.Dimension(1000, 500));
 
         jPanelTipoCocina.setBackground(new java.awt.Color(248, 228, 191));
         jPanelTipoCocina.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tipo cocina", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Century Gothic", 0, 18))); // NOI18N
@@ -143,7 +148,7 @@ public class SalonHabana extends javax.swing.JDialog {
         jSpinnerPersonas.setToolTipText("Nº Personas");
 
         jComboBoxTipoBanquete.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBoxTipoBanquete.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jComboBoxTipoBanquete.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jComboBoxTipoBanquete.setForeground(new java.awt.Color(204, 204, 204));
         jComboBoxTipoBanquete.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banquete", "Jornada", "Congreso" }));
         jComboBoxTipoBanquete.setToolTipText("Tipo reserva");
@@ -151,45 +156,79 @@ public class SalonHabana extends javax.swing.JDialog {
         jLabelTipoReserva.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabelTipoReserva.setText("Tipo reserva");
 
+        jTextFieldCongreso.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jTextFieldCongreso.setToolTipText("Nombre");
+        jTextFieldCongreso.setEnabled(false);
+
+        jLabelDiasCongreso.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabelDiasCongreso.setText("Nº Dias Congreso");
+        jLabelDiasCongreso.setEnabled(false);
+
+        jCheckBoxAlojamiento.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jCheckBoxAlojamiento.setText("¿Necesita alojamiento?");
+        jCheckBoxAlojamiento.setEnabled(false);
+
+        jButton1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jButton1.setText("RESERVAR");
+
         javax.swing.GroupLayout jPanelPrincipalLayout = new javax.swing.GroupLayout(jPanelPrincipal);
         jPanelPrincipal.setLayout(jPanelPrincipalLayout);
         jPanelPrincipalLayout.setHorizontalGroup(
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 978, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelPrincipalLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                    .addComponent(jLabelPresentacion, javax.swing.GroupLayout.PREFERRED_SIZE, 978, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanelTipoCocina, javax.swing.GroupLayout.PREFERRED_SIZE, 884, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addContainerGap()
+                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPrincipalLayout.createSequentialGroup()
+                        .addGap(0, 4, Short.MAX_VALUE)
+                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelPresentacion, javax.swing.GroupLayout.PREFERRED_SIZE, 978, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                                .addComponent(jLabelFecha)
-                                .addGap(18, 18, 18)
-                                .addComponent(jSpinnerFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(70, 70, 70)
-                                .addComponent(jLabelTipoReserva)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBoxTipoBanquete, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                                .addComponent(jLabelNombre)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(48, 48, 48)
+                                .addGap(49, 49, 49)
+                                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jPanelTipoCocina, javax.swing.GroupLayout.PREFERRED_SIZE, 884, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                                                .addComponent(jLabelFecha)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jSpinnerFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(70, 70, 70)
+                                                .addComponent(jLabelTipoReserva)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jComboBoxTipoBanquete, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                                                .addComponent(jLabelNombre)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(48, 48, 48)
+                                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                                                .addComponent(jLabelPersonas)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jSpinnerPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                                                .addComponent(jLabelTelefono)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                        .addGap(12, 12, 12))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPrincipalLayout.createSequentialGroup()
                         .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                                .addComponent(jLabelPersonas)
-                                .addGap(18, 18, 18)
-                                .addComponent(jSpinnerPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                                .addComponent(jLabelTelefono)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(jLabelImagen, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator1))
+                        .addContainerGap())))
+            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                .addGap(274, 274, 274)
+                .addComponent(jLabelDiasCongreso)
+                .addGap(18, 18, 18)
+                .addComponent(jTextFieldCongreso, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jCheckBoxAlojamiento)
+                .addGap(257, 257, 257))
+            .addGroup(jPanelPrincipalLayout.createSequentialGroup()
+                .addGap(364, 364, 364)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelPrincipalLayout.setVerticalGroup(
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,7 +239,6 @@ public class SalonHabana extends javax.swing.JDialog {
                 .addComponent(jLabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -223,7 +261,16 @@ public class SalonHabana extends javax.swing.JDialog {
                             .addComponent(jLabelTipoReserva))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelTipoCocina, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(537, 537, 537))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldCongreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelDiasCongreso)
+                    .addComponent(jCheckBoxAlojamiento))
+                .addGap(30, 30, 30)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -238,7 +285,7 @@ public class SalonHabana extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -330,7 +377,10 @@ public class SalonHabana extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroupCocina;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBoxAlojamiento;
     private javax.swing.JComboBox<String> jComboBoxTipoBanquete;
+    private javax.swing.JLabel jLabelDiasCongreso;
     private javax.swing.JLabel jLabelFecha;
     private javax.swing.JLabel jLabelImagen;
     private javax.swing.JLabel jLabelNombre;
@@ -345,8 +395,10 @@ public class SalonHabana extends javax.swing.JDialog {
     private javax.swing.JRadioButton jRadioCitaChef;
     private javax.swing.JRadioButton jRadioNoPrecisa;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSpinner jSpinnerFecha;
     private javax.swing.JSpinner jSpinnerPersonas;
+    private javax.swing.JTextField jTextFieldCongreso;
     private javax.swing.JTextField jTextFieldNombre;
     private javax.swing.JTextField jTextFieldTelefono;
     // End of variables declaration//GEN-END:variables

@@ -9,3 +9,4 @@
 - Imagen de presentación
     Se trata de una etiqueta sin texto, en la que la imagen es su icono
     
+- Para el Tipo de cocina, he hecho un Panel con título, con GridLayout para ordenar fácilmente los jRadioButton 

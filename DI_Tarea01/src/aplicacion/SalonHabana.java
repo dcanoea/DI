@@ -76,18 +76,13 @@ public class SalonHabana extends javax.swing.JDialog {
         jPanelTipoCocina.setBackground(new java.awt.Color(248, 228, 191));
         jPanelTipoCocina.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tipo cocina", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Century Gothic", 0, 18))); // NOI18N
         jPanelTipoCocina.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jPanelTipoCocina.setLayout(new java.awt.GridLayout());
+        jPanelTipoCocina.setLayout(new java.awt.GridLayout(1, 0));
 
         buttonGroupCocina.add(jRadioBufe);
         jRadioBufe.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jRadioBufe.setText("Bufé");
         jRadioBufe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jRadioBufe.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jRadioBufe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioBufeActionPerformed(evt);
-            }
-        });
         jPanelTipoCocina.add(jRadioBufe);
 
         buttonGroupCocina.add(jRadioCarta);
@@ -152,12 +147,17 @@ public class SalonHabana extends javax.swing.JDialog {
         jComboBoxTipoBanquete.setForeground(new java.awt.Color(204, 204, 204));
         jComboBoxTipoBanquete.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banquete", "Jornada", "Congreso" }));
         jComboBoxTipoBanquete.setToolTipText("Tipo reserva");
+        jComboBoxTipoBanquete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxTipoBanqueteActionPerformed(evt);
+            }
+        });
 
         jLabelTipoReserva.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabelTipoReserva.setText("Tipo reserva");
 
         jTextFieldCongreso.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextFieldCongreso.setToolTipText("Nombre");
+        jTextFieldCongreso.setToolTipText("Nº Dias Congreso");
         jTextFieldCongreso.setEnabled(false);
 
         jLabelDiasCongreso.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
@@ -239,26 +239,20 @@ public class SalonHabana extends javax.swing.JDialog {
                 .addComponent(jLabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
                 .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelTelefono))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jSpinnerPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelPersonas)))
-                    .addGroup(jPanelPrincipalLayout.createSequentialGroup()
-                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelNombre))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelFecha)
-                            .addComponent(jSpinnerFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxTipoBanquete)
-                            .addComponent(jLabelTipoReserva))))
+                    .addComponent(jTextFieldTelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelTelefono, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelNombre, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jSpinnerPersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelPersonas)
+                    .addComponent(jComboBoxTipoBanquete)
+                    .addComponent(jLabelTipoReserva)
+                    .addComponent(jSpinnerFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelFecha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelTipoCocina, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -285,7 +279,7 @@ public class SalonHabana extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -295,9 +289,17 @@ public class SalonHabana extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioBufeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioBufeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioBufeActionPerformed
+    private void jComboBoxTipoBanqueteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTipoBanqueteActionPerformed
+        if (jComboBoxTipoBanquete.getSelectedItem().toString().equals("Congreso")) {
+            jLabelDiasCongreso.setEnabled(rootPaneCheckingEnabled);
+            jTextFieldCongreso.setEnabled(rootPaneCheckingEnabled);
+            jCheckBoxAlojamiento.setEnabled(rootPaneCheckingEnabled);
+        } else {
+            jLabelDiasCongreso.setEnabled(false);
+            jTextFieldCongreso.setEnabled(false);
+            jCheckBoxAlojamiento.setEnabled(false);
+        }
+    }//GEN-LAST:event_jComboBoxTipoBanqueteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -370,7 +372,6 @@ public class SalonHabana extends javax.swing.JDialog {
         //Indicamos el model para cada Spinner además del formato de fecha y hora según corresponda.
         jSpinnerFecha.setModel(fechaModel);
         jSpinnerFecha.setEditor(new JSpinner.DateEditor(jSpinnerFecha, "dd/MM/yyyy"));
-        
 
     }
 

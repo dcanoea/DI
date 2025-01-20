@@ -123,11 +123,15 @@ public class Aplicacion extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         SalonHabana ventana = new SalonHabana(this, rootPaneCheckingEnabled);
         ventana.setVisible(rootPaneCheckingEnabled);
+        ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItemReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemReservasActionPerformed
         SalonHabana ventana = new SalonHabana(this, rootPaneCheckingEnabled);
         ventana.setVisible(rootPaneCheckingEnabled);
+        ventana.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        System.exit(0);
     }//GEN-LAST:event_jMenuItemReservasActionPerformed
 
     /**

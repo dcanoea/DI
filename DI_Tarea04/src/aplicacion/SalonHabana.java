@@ -10,11 +10,10 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.Calendar;
 import java.util.Date;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerDateModel;
 import javax.swing.SpinnerModel;
+import javax.swing.WindowConstants;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
@@ -24,11 +23,17 @@ import javax.swing.border.TitledBorder;
  */
 public class SalonHabana extends javax.swing.JDialog {
 
+    public static SalonHabana dialog = new SalonHabana(new javax.swing.JFrame(), false);
+    Confirmacion confirm;
+
     /**
      * Creates new form SalonHabana
      */
     public SalonHabana(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        parent.setVisible(false);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        confirm = new Confirmacion(parent, rootPaneCheckingEnabled);
         initComponents();
         spinnerFecha();
     }
@@ -175,6 +180,11 @@ public class SalonHabana extends javax.swing.JDialog {
 
         jButton1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jButton1.setText("RESERVAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jCheckBox1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jCheckBox1.setText("Modo Alto Contraste");
@@ -307,26 +317,25 @@ public class SalonHabana extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //jCheckBox para aplicar el modo de alto contraste
+    //método del jCheckBox para aplicar el modo de alto contraste
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         if (jCheckBox1.isSelected()) {
+            //Cambiamos el color de fondo de los paneles
             jPanelPrincipal.setBackground(Color.BLACK);
             jPanelTipoCocina.setBackground(Color.BLACK);
 
             //Cambiamos el color del borde del jPanelTipoCocina, incluido el título
-            LineBorder lineBorder = new LineBorder(Color.YELLOW, 2); // Borde de 2 píxeles y color AMARILLO
-            TitledBorder border = new TitledBorder(lineBorder,"Tipo Cocina");
-            Font customFont = new Font("Century Gothic", Font.PLAIN, 18);
-            border.setTitleColor(Color.yellow);
-            border.setTitleFont(customFont);
-            border.setTitleJustification(TitledBorder.CENTER);
-            jPanelTipoCocina.setBorder(border);
-            
-            
+            LineBorder lineBorder = new LineBorder(Color.YELLOW, 2); // Creamos el borde de 2 píxeles y color AMARILLO
+            TitledBorder border = new TitledBorder(lineBorder, "Tipo Cocina"); //Creamos el texto al titulo
+            Font customFont = new Font("Century Gothic", Font.PLAIN, 18); //Creamos la fuente del titulo, el tipo y el tamaño
+            border.setTitleColor(Color.yellow);// Cambiamos el color del texto del titulo
+            border.setTitleFont(customFont);//Cambiamos la fuente
+            border.setTitleJustification(TitledBorder.CENTER);//Centramos el titulo
+            jPanelTipoCocina.setBorder(border);//Añadimos el borde al panel
 
+            //Cambiamos el color de todos los textos
             jCheckBox1.setForeground(Color.YELLOW);
             jCheckBoxAlojamiento.setForeground(Color.YELLOW);
-
             jLabelDiasCongreso.setForeground(Color.YELLOW);
             jLabelFecha.setForeground(Color.YELLOW);
             jLabelImagen.setForeground(Color.YELLOW);
@@ -335,28 +344,29 @@ public class SalonHabana extends javax.swing.JDialog {
             jLabelPresentacion.setForeground(Color.YELLOW);
             jLabelTelefono.setForeground(Color.YELLOW);
             jLabelTipoReserva.setForeground(Color.YELLOW);
-
             jRadioBufe.setForeground(Color.YELLOW);
             jRadioCarta.setForeground(Color.YELLOW);
             jRadioCitaChef.setForeground(Color.YELLOW);
             jRadioNoPrecisa.setForeground(Color.YELLOW);
 
         } else {
-            Color color = new Color(248, 228, 191);
+            //Cambiamos el color de fondo de los paneles
+            Color color = new Color(248, 228, 191); //Color personalizado de origen
             jPanelPrincipal.setBackground(color);
             jPanelTipoCocina.setBackground(color);
-            
+
             //Cambiamos el color del borde del jPanelTipoCocina, incluido el título
-            LineBorder lineBorder = new LineBorder(Color.BLACK, 2); // Borde de 2 píxeles y color AMARILLO
-            TitledBorder border = new TitledBorder(lineBorder,"Tipo Cocina");
+            LineBorder lineBorder = new LineBorder(Color.BLACK, 2);
+            TitledBorder border = new TitledBorder(lineBorder, "Tipo Cocina");
             Font customFont = new Font("Century Gothic", Font.PLAIN, 18);
             border.setTitleColor(Color.BLACK);
             border.setTitleFont(customFont);
             border.setTitleJustification(TitledBorder.CENTER);
             jPanelTipoCocina.setBorder(border);
+
+            //Cambiamos el color de todos los textos
             jCheckBox1.setForeground(Color.black);
             jCheckBoxAlojamiento.setForeground(Color.black);
-
             jLabelDiasCongreso.setForeground(Color.black);
             jLabelFecha.setForeground(Color.black);
             jLabelImagen.setForeground(Color.black);
@@ -365,7 +375,6 @@ public class SalonHabana extends javax.swing.JDialog {
             jLabelPresentacion.setForeground(Color.black);
             jLabelTelefono.setForeground(Color.black);
             jLabelTipoReserva.setForeground(Color.black);
-
             jRadioBufe.setForeground(Color.black);
             jRadioCarta.setForeground(Color.black);
             jRadioCitaChef.setForeground(Color.black);
@@ -385,6 +394,10 @@ public class SalonHabana extends javax.swing.JDialog {
             jCheckBoxAlojamiento.setEnabled(false);
         }
     }//GEN-LAST:event_jComboBoxTipoBanqueteActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        confirm.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -416,13 +429,6 @@ public class SalonHabana extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                SalonHabana dialog = new SalonHabana(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
                 dialog.setVisible(true);
             }
         });

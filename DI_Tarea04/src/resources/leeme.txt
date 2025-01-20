@@ -1,12 +1,6 @@
-- He añadido un jPanel como contenedor principal, con orden libre y fondo de color
+- He añadido un checkBox que activa el modo de alto contraste. Pasamos de un fondo claro y texto negro, a un fondo negro y texto amarillo.
+Para ello he tenido que establecer un método en el ActionPerformed del checkBox
 
-- Cambiar Icono Ventana
-    La imagen debe estar en un paquete del proyecto (resources)
-    Hay que sobreescribir el método getIconImage.
-    Una vez hecho el método, desde las propiedades del Frame o Dialog, seleccionamos: 
-            IconImage > ... > Value from existing component > Property > IconImage
+- Aunque el menú principal es modal, he hecho que se oculte cuando aparezca la pantalla de reservas, para evitar distraer al usuario.
 
-- Imagen de presentación
-    Se trata de una etiqueta sin texto, en la que la imagen es su icono
-    
-- Para el Tipo de cocina, he hecho un Panel con título, con GridLayout para ordenar fácilmente los jRadioButton 
+-Cuando se pulsa el botón "RESERVAR" vuelve a la pantalla de título con un mensaje de agradecimiento

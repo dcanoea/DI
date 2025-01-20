@@ -4,6 +4,8 @@
  */
 package aplicacion;
 
+import java.awt.Color;
+
 /**
  *
  * @author David Cano Escario
@@ -40,9 +42,19 @@ public class Confirmacion extends javax.swing.JDialog {
         tipoReserva = new javax.swing.JLabel();
         tipoCocina = new javax.swing.JLabel();
         numPersonas = new javax.swing.JLabel();
+        jLabelError = new javax.swing.JLabel();
+        jLabelDiasCongreso = new javax.swing.JLabel();
+        diasCongreso = new javax.swing.JLabel();
+        jLabelAlojamiento = new javax.swing.JLabel();
+        alojamiento = new javax.swing.JLabel();
+        jLabelTelefono = new javax.swing.JLabel();
+        telefono = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("CONFIRMAR RESERVA");
         setBackground(new java.awt.Color(248, 228, 191));
+        setBounds(new java.awt.Rectangle(600, 300, 0, 0));
+        setForeground(new java.awt.Color(248, 221, 192));
 
         jPanel1.setBackground(new java.awt.Color(248, 228, 191));
         jPanel1.setForeground(new java.awt.Color(248, 228, 191));
@@ -81,32 +93,62 @@ public class Confirmacion extends javax.swing.JDialog {
 
         numPersonas.setText("jLabel1");
 
+        jLabelError.setBackground(new java.awt.Color(255, 51, 51));
+        jLabelError.setText("ddd");
+
+        jLabelDiasCongreso.setText("Nº Dias Congreso");
+
+        diasCongreso.setText("jLabel1");
+
+        jLabelAlojamiento.setText("¿Alojamiento?");
+
+        alojamiento.setText("jLabel1");
+
+        jLabelTelefono.setText("Teléfono");
+
+        telefono.setText("jLabel2");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(62, 62, 62)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabelError)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButtonConfirmar)
                         .addGap(24, 24, 24)
                         .addComponent(jButtonVolver)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelNumPersonas)
                             .addComponent(jLabelTipoCocina)
                             .addComponent(jLabelTipoReserva)
                             .addComponent(jLabelFechaReserva)
-                            .addComponent(jLabelNombreReserva))
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(fecha)
-                            .addComponent(nombre)
-                            .addComponent(tipoReserva)
-                            .addComponent(tipoCocina)
-                            .addComponent(numPersonas))
+                            .addComponent(jLabelNombreReserva)
+                            .addComponent(jLabelDiasCongreso)
+                            .addComponent(jLabelAlojamiento)
+                            .addComponent(jLabelTelefono))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(fecha)
+                                    .addComponent(nombre)
+                                    .addComponent(tipoReserva)
+                                    .addComponent(tipoCocina)
+                                    .addComponent(numPersonas)
+                                    .addComponent(telefono)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(alojamiento)
+                                    .addComponent(diasCongreso))))
                         .addGap(405, 405, 405))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -116,6 +158,10 @@ public class Confirmacion extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNombreReserva)
                     .addComponent(nombre))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTelefono)
+                    .addComponent(telefono))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelFechaReserva)
@@ -132,11 +178,21 @@ public class Confirmacion extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNumPersonas)
                     .addComponent(numPersonas))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelDiasCongreso)
+                    .addComponent(diasCongreso))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelAlojamiento)
+                    .addComponent(alojamiento))
+                .addGap(18, 18, 18)
+                .addComponent(jLabelError)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonConfirmar)
                     .addComponent(jButtonVolver))
-                .addGap(36, 36, 36))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -147,7 +203,9 @@ public class Confirmacion extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -198,18 +256,70 @@ public class Confirmacion extends javax.swing.JDialog {
         });
     }
 
+    // Método para establecer los datos en los JLabel
+    public void setDatos(String nombreReserva, String telefono, String fechaReserva, String tipoCocina, String tipoReserva, String numPersonas, String congreso, String alojamiento) {
+        // Establece el texto de los labels
+        this.nombre.setText(nombreReserva);
+        this.telefono.setText(telefono);
+        this.fecha.setText(fechaReserva);
+        this.tipoCocina.setText(tipoCocina);
+        this.tipoReserva.setText(tipoReserva);
+        this.numPersonas.setText(numPersonas);
+        this.diasCongreso.setText(congreso);
+        this.alojamiento.setText(alojamiento);
+    }
+
+    public void ocultarBoton() {
+        jButtonConfirmar.setEnabled(false);
+        jLabelError.setText("ERROR Revise los campos");
+        jLabelError.setForeground(Color.red);
+    }
+
+    public void mostrarBoton() {
+        jButtonConfirmar.setEnabled(true);
+        jLabelError.setText("");
+    }
+
+    public void congresoSi() {
+        jLabelDiasCongreso.setVisible(true);
+        diasCongreso.setVisible(true);
+        alojamientoSi();
+    }
+
+    public void congresoNo() {
+        jLabelDiasCongreso.setVisible(false);
+        diasCongreso.setVisible(false);
+        alojamientoNo();
+    }
+
+    public void alojamientoSi() {
+        jLabelAlojamiento.setVisible(true);
+        alojamiento.setVisible(true);
+    }
+
+    public void alojamientoNo() {
+        jLabelAlojamiento.setVisible(false);
+        alojamiento.setVisible(false);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel alojamiento;
+    private javax.swing.JLabel diasCongreso;
     private javax.swing.JLabel fecha;
     private javax.swing.JButton jButtonConfirmar;
     private javax.swing.JButton jButtonVolver;
+    private javax.swing.JLabel jLabelAlojamiento;
+    private javax.swing.JLabel jLabelDiasCongreso;
+    private javax.swing.JLabel jLabelError;
     private javax.swing.JLabel jLabelFechaReserva;
     private javax.swing.JLabel jLabelNombreReserva;
     private javax.swing.JLabel jLabelNumPersonas;
+    private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JLabel jLabelTipoCocina;
     private javax.swing.JLabel jLabelTipoReserva;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nombre;
     private javax.swing.JLabel numPersonas;
+    private javax.swing.JLabel telefono;
     private javax.swing.JLabel tipoCocina;
     private javax.swing.JLabel tipoReserva;
     // End of variables declaration//GEN-END:variables

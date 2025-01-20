@@ -3,4 +3,8 @@ Para ello he tenido que establecer un método en el ActionPerformed del checkBox
 
 - Aunque el menú principal es modal, he hecho que se oculte cuando aparezca la pantalla de reservas, para evitar distraer al usuario.
 
--Cuando se pulsa el botón "RESERVAR" vuelve a la pantalla de título con un mensaje de agradecimiento
+-Cuando se pulsa el botón "RESERVAR" aparece un nuevo dialog que permite ver un resumen de la reserva. Para implementarlo he creado un método en la clase Confirmación. 
+    Desde la acción del botón se recogen los datos y se pasan al método para que se muestre al abrir el nuevo Dialog.
+    Si hay un error o no se ha seleccionado algo, se deshabilita el botón de confirmar y se ve un mensaje de ERROR
+
+- En el resumen de la reserva podemos Aceptar (cierra el programa) o Volver (editar los datos)

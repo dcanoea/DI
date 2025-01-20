@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JSpinner;
@@ -396,6 +397,67 @@ public class SalonHabana extends javax.swing.JDialog {
     }//GEN-LAST:event_jComboBoxTipoBanqueteActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        String nombreReserva = jTextFieldNombre.getText();
+        String telefono = jTextFieldTelefono.getText();
+
+        SimpleDateFormat sdf = new SimpleDateFormat("dd / MM / yyyy");
+        String fechaReserva = sdf.format(jSpinnerFecha.getValue());
+
+        String tipoCocina = "";
+        if (jRadioBufe.isSelected()) {
+            tipoCocina = jRadioBufe.getText();
+            confirm.mostrarBoton();
+        } else if (jRadioCarta.isSelected()) {
+            tipoCocina = jRadioCarta.getText();
+            confirm.mostrarBoton();
+        } else if (jRadioCitaChef.isSelected()) {
+            tipoCocina = jRadioCitaChef.getText();
+            confirm.mostrarBoton();
+        } else if (jRadioNoPrecisa.isSelected()) {
+            tipoCocina = jRadioNoPrecisa.getText();
+            confirm.mostrarBoton();
+        } else {
+            tipoCocina = "ERROR";
+            confirm.ocultarBoton();
+        }
+        String tipoReserva = jComboBoxTipoBanquete.getSelectedItem().toString();
+        String numPersonas = jSpinnerPersonas.getValue().toString();
+        String congreso = jTextFieldCongreso.getText();
+
+        if (nombreReserva.isBlank()) {
+            nombreReserva = "ERROR";
+            confirm.ocultarBoton();
+        }
+        if (telefono.isBlank()) {
+            telefono = "ERROR";
+            confirm.ocultarBoton();
+        }
+        if (numPersonas.equals("0")) {
+            numPersonas = "ERROR";
+            confirm.ocultarBoton();
+        }
+        
+        if (jComboBoxTipoBanquete.getSelectedItem().toString().equalsIgnoreCase("congreso")){
+            confirm.congresoSi();
+        }else{
+            confirm.congresoNo();
+        }
+        
+        String alojamiento;
+        if (jCheckBoxAlojamiento.isSelected()) {
+            alojamiento = "SI";
+        } else {
+            alojamiento = "NO";
+        }
+
+        if(congreso.isBlank()){
+            congreso = "ERROR";
+            confirm.ocultarBoton();
+        }
+        
+        confirm.setDatos(nombreReserva, telefono, fechaReserva, tipoCocina, tipoReserva, numPersonas, congreso, alojamiento);
+
         confirm.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

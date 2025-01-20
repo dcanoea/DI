@@ -425,6 +425,23 @@ public class SalonHabana extends javax.swing.JDialog {
         String numPersonas = jSpinnerPersonas.getValue().toString();
         String congreso = jTextFieldCongreso.getText();
 
+        if (jComboBoxTipoBanquete.getSelectedItem().toString().equalsIgnoreCase("congreso")) {
+            confirm.congresoSi();
+            if (congreso.isBlank()) {
+                congreso = "ERROR";
+                confirm.ocultarBoton();
+            }
+        } else {
+            confirm.congresoNo();
+        }
+
+        String alojamiento;
+        if (jCheckBoxAlojamiento.isSelected()) {
+            alojamiento = "SI";
+        } else {
+            alojamiento = "NO";
+        }
+
         if (nombreReserva.isBlank()) {
             nombreReserva = "ERROR";
             confirm.ocultarBoton();
@@ -437,25 +454,7 @@ public class SalonHabana extends javax.swing.JDialog {
             numPersonas = "ERROR";
             confirm.ocultarBoton();
         }
-        
-        if (jComboBoxTipoBanquete.getSelectedItem().toString().equalsIgnoreCase("congreso")){
-            confirm.congresoSi();
-        }else{
-            confirm.congresoNo();
-        }
-        
-        String alojamiento;
-        if (jCheckBoxAlojamiento.isSelected()) {
-            alojamiento = "SI";
-        } else {
-            alojamiento = "NO";
-        }
 
-        if(congreso.isBlank()){
-            congreso = "ERROR";
-            confirm.ocultarBoton();
-        }
-        
         confirm.setDatos(nombreReserva, telefono, fechaReserva, tipoCocina, tipoReserva, numPersonas, congreso, alojamiento);
 
         confirm.setVisible(true);

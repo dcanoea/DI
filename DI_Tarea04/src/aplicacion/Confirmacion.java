@@ -5,6 +5,7 @@
 package aplicacion;
 
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -216,7 +217,8 @@ public class Confirmacion extends javax.swing.JDialog {
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jButtonConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmarActionPerformed
-        System.exit(0);
+           JOptionPane.showMessageDialog(null, "¡Gracias!", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+           System.exit(0);
     }//GEN-LAST:event_jButtonConfirmarActionPerformed
 
     /**
@@ -289,7 +291,8 @@ public class Confirmacion extends javax.swing.JDialog {
     public void congresoNo() {
         jLabelDiasCongreso.setVisible(false);
         diasCongreso.setVisible(false);
-        alojamientoNo();
+        jLabelAlojamiento.setVisible(false);
+        alojamiento.setVisible(false);
     }
 
     public void alojamientoSi() {
@@ -297,10 +300,6 @@ public class Confirmacion extends javax.swing.JDialog {
         alojamiento.setVisible(true);
     }
 
-    public void alojamientoNo() {
-        jLabelAlojamiento.setVisible(false);
-        alojamiento.setVisible(false);
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel alojamiento;
     private javax.swing.JLabel diasCongreso;

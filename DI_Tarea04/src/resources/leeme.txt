@@ -5,6 +5,6 @@ Para ello he tenido que establecer un método en el ActionPerformed del checkBox
 
 -Cuando se pulsa el botón "RESERVAR" aparece un nuevo dialog que permite ver un resumen de la reserva. Para implementarlo he creado un método en la clase Confirmación. 
     Desde la acción del botón se recogen los datos y se pasan al método para que se muestre al abrir el nuevo Dialog.
-    Si hay un error o no se ha seleccionado algo, se deshabilita el botón de confirmar y se ve un mensaje de ERROR
+    Si hay un error o no se ha seleccionado algo, se deshabilita el botón de confirmar y se ve un mensaje de ERROR tanto en cada campo como encima del botón 
 
-- En el resumen de la reserva podemos Aceptar (cierra el programa) o Volver (editar los datos)
+- En el resumen de la reserva podemos Aceptar (muestra un JOptionPane con un mensaje de gracias y cierra el programa) o Volver (editar los datos)

@@ -7,7 +7,6 @@ package com.ejemplo;
 import java.awt.Desktop;
 import java.io.File;
 import net.sf.jasperreports.engine.*;
-
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,7 +14,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import net.sf.jasperreports.engine.util.JRLoader;
-import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -42,7 +40,7 @@ public class GeneradorFacturas {
                 return;
             }
 
-            // 3. Conexión a MySQL (configura tus credenciales)
+            // 3. Conexión a MySQL
             try (Connection conn = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/fabrica",
                     "root",

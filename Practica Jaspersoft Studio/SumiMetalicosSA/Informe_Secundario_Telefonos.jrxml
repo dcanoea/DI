@@ -1,0 +1,43 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Informe_Secundario_Telefonos" language="java" columnCount="1" pageWidth="270" pageHeight="842" orientation="Landscape" columnWidth="270" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="764099e0-0ee2-400d-bd05-d9d071ace494">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Id_contacto" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<query language="sql"><![CDATA[select telefono from telefonos where id_cliente = $P{Id_contacto}]]></query>
+	<field name="telefono" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Telefono"/>
+		<property name="com.jaspersoft.studio.field.label" value="telefono"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="telefonos"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="62" splitType="Stretch">
+		<element kind="staticText" uuid="b5cb0f9b-7d25-462c-963b-dc77fbe8dede" x="10" y="12" width="250" height="50" fontSize="19.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Telefonos]]></text>
+		</element>
+	</title>
+	<columnHeader height="30">
+		<element kind="staticText" uuid="3057c316-130c-47f9-83a4-6c2088521b22" mode="Opaque" x="9" y="0" width="250" height="30" backcolor="#51A82C" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Teléfonos]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="002be78a-96a7-4a18-a613-3d42150e88ec"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<element kind="textField" uuid="27d716a3-fddb-447b-8103-2146a6b0799c" x="10" y="0" width="249" height="30" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{telefono}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b15ee572-a0a2-4272-8bb5-71481a694343"/>
+			</element>
+		</band>
+	</detail>
+</jasperReport>

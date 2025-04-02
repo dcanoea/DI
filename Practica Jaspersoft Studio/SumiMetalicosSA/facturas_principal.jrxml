@@ -1,0 +1,82 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="facturas_principal" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ec9f46f6-2633-4b41-891a-80fa1e0f5afb">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.jrdax"/>
+	<query language="SQL"><![CDATA[select * from clientes]]></query>
+	<field name="ID_Cliente" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ID_Cliente"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID_Cliente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clientes"/>
+	</field>
+	<field name="Nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Nombre"/>
+		<property name="com.jaspersoft.studio.field.label" value="Nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clientes"/>
+	</field>
+	<field name="Direccion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Direccion"/>
+		<property name="com.jaspersoft.studio.field.label" value="Direccion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clientes"/>
+	</field>
+	<field name="Ciudad" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Ciudad"/>
+		<property name="com.jaspersoft.studio.field.label" value="Ciudad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clientes"/>
+	</field>
+	<group name="GroupClientes" startNewPage="true">
+		<expression><![CDATA[$F{ID_Cliente}]]></expression>
+		<groupHeader>
+			<band height="152">
+				<element kind="staticText" uuid="cf215247-2e1a-4dd8-97a9-816e2995b108" x="130" y="52" width="125" height="30" fontName="Arial" fontSize="14.0" bold="true" hTextAlign="Left" vTextAlign="Middle">
+					<text><![CDATA[    Cliente: ]]></text>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</element>
+				<element kind="textField" uuid="2763bd9f-8438-4788-b768-eb370e0166c9" x="255" y="52" width="185" height="30" fontName="Arial" fontSize="14.0" hTextAlign="Left" vTextAlign="Middle">
+					<expression><![CDATA[$F{Nombre}]]></expression>
+				</element>
+				<element kind="staticText" uuid="82117207-bc72-4dad-b499-17363dcb36ee" x="130" y="112" width="125" height="30" fontName="Arial" fontSize="14.0" bold="true" hTextAlign="Left" vTextAlign="Middle">
+					<text><![CDATA[    Ciudad: ]]></text>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</element>
+				<element kind="staticText" uuid="5df8a19f-2d65-4fa9-9778-f28fa95d4aff" x="130" y="22" width="125" height="30" fontName="Arial" fontSize="14.0" bold="true" hTextAlign="Left" vTextAlign="Middle">
+					<text><![CDATA[    Nº Cliente: ]]></text>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</element>
+				<element kind="textField" uuid="126b0031-f3a0-4169-87fd-967909cbf457" x="255" y="82" width="185" height="30" fontName="Arial" fontSize="14.0" hTextAlign="Left" vTextAlign="Middle">
+					<expression><![CDATA[$F{Direccion}]]></expression>
+				</element>
+				<element kind="textField" uuid="3f896b10-6c84-4018-9ec5-7c4ae2cb1fc6" x="255" y="112" width="185" height="30" fontName="Arial" fontSize="14.0" hTextAlign="Left" vTextAlign="Middle">
+					<expression><![CDATA[$F{Ciudad}]]></expression>
+				</element>
+				<element kind="textField" uuid="6d77f6e1-b068-4556-a3fc-29e4c92b8260" x="255" y="22" width="185" height="30" fontName="Arial" fontSize="14.0" hTextAlign="Left" vTextAlign="Middle">
+					<expression><![CDATA[$F{ID_Cliente}]]></expression>
+				</element>
+				<element kind="staticText" uuid="f1788156-b9a4-4ee7-9587-ac097b2e0f73" x="130" y="82" width="125" height="30" fontName="Arial" fontSize="14.0" bold="true" hTextAlign="Left" vTextAlign="Middle">
+					<text><![CDATA[    Dirección: ]]></text>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</element>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+	<background splitType="Stretch"/>
+	<title height="54" splitType="Stretch">
+		<element kind="textField" uuid="09f98997-914d-428d-8e17-dc11499cbe73" x="94" y="20" width="380" height="34" fontName="Arial Black" fontSize="22.0" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA["FACTURAS David Cano S.A."]]></expression>
+		</element>
+	</title>
+	<columnHeader splitType="Stretch"/>
+	<detail>
+		<band height="481" splitType="Stretch">
+			<element kind="subreport" uuid="0a297b6e-72cc-45d8-97c1-c8f8e634a570" x="0" y="0" width="560" height="481">
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<expression><![CDATA["Informe_Secundario_Facturas.jasper"]]></expression>
+				<parameter name="Id_cliente">
+					<expression><![CDATA[$F{ID_Cliente}]]></expression>
+				</parameter>
+			</element>
+		</band>
+	</detail>
+</jasperReport>
